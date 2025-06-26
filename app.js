@@ -91,7 +91,11 @@ function initializeElements() {
     playlistPicker: document.getElementById('playlist-picker'),
     pickerList: document.getElementById('picker-list'),
     createPlaylistBtn: document.getElementById('create-playlist-btn'),
-    playlistPlayBtn: document.getElementById('playlist-play-btn')
+    playlistPlayBtn: document.getElementById('playlist-play-btn'),
+    updatesBtn: document.getElementById('updates-btn'),
+    updatesPage: document.getElementById('updates-page'),
+    updatesBackBtn: document.getElementById('updates-back-btn'),
+    updatesContent: document.getElementById('updates-content')
   };
   state.audioElement = document.getElementById('audio-player');
 }
@@ -283,6 +287,14 @@ function setupEventListeners() {
     const first=state.currentPlaylist.tracks[0];
     playSong(first.downloadUrl[state.currentQuality].link, first.id);
   });
+
+  // Updates page
+  if(elements.updatesBtn){
+    elements.updatesBtn.addEventListener('click', openUpdatesPage);
+  }
+  if(elements.updatesBackBtn){
+    elements.updatesBackBtn.addEventListener('click', closeUpdatesPage);
+  }
 
   // Fallback delegation in case button appears later
   const profilePageEl = document.getElementById('profile-page');
@@ -1114,3 +1126,19 @@ function addTrackToPlaylist(track) {
 // back buttons
 document.getElementById('profile-back-btn').addEventListener('click',()=>{document.getElementById('profile-page').style.display='none';});
 document.getElementById('playlist-back-btn').addEventListener('click',()=>{document.getElementById('playlist-page').style.display='none';});
+
+// Updates page functions
+function openUpdatesPage(){
+  fetch('updates.md')
+    .then(r=>r.text())
+    .then(md=>{
+      elements.updatesContent.innerHTML=marked.parse(md);
+      elements.updatesPage.style.display='flex';
+    }).catch(()=>{
+      elements.updatesContent.textContent='Failed to load updates';
+      elements.updatesPage.style.display='flex';
+    });
+}
+function closeUpdatesPage(){
+  elements.updatesPage.style.display='none';
+}

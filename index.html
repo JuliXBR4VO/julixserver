@@ -29,13 +29,14 @@
     <i class="fas fa-moon"></i>
   </button>
 
-  <!-- User Menu -->
+  <!-- User Menu & Updates -->
   <div id="user-menu" class="user-menu">
     <button id="login-btn" class="login-btn">Login</button>
     <div id="user-info" class="user-info" style="display:none;">
       <img id="user-avatar" class="user-avatar" src="https://www.gravatar.com/avatar?d=mp&s=32" alt="avatar" />
       <span id="user-name"></span>
     </div>
+    <button id="updates-btn" class="login-btn" style="background:var(--accent);">Updates</button>
   </div>
 
   <!-- Main Container -->
@@ -279,5 +280,14 @@
   <div id="playlist-picker" class="playlist-picker">
     <div id="picker-list" class="picker-list"></div>
   </div>
+
+  <!-- Updates Page -->
+  <section id="updates-page" class="updates-page" style="display:none;">
+    <button id="updates-back-btn" class="updates-back-btn" aria-label="Back"><i class="fas fa-arrow-left"></i></button>
+    <div id="updates-content" class="updates-content"></div>
+  </section>
+
+  <!-- Marked (Markdown Parser) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.18/marked.min.js" integrity="sha512-Ae3UeJ8V+RaH//RUW2KIiMzFxLpy0X58F3RDeo63eFUsVTNff7kwh28ykVfoCENKz7LxyzKDn5XxhxL7sRKqHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
