@@ -1747,3 +1747,5 @@ body {
 .updates-content{max-width:800px;width:100%;color:var(--text-primary);}
 
 .updates-btn{background:var(--accent);color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:600;cursor:pointer;transition:var(--transition);} .updates-btn:hover{background:#0ea66d;}
+
+.floating-updates{position:fixed;top:20px;right:150px;z-index:5000;}
