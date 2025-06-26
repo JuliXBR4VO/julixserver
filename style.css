@@ -1745,3 +1745,5 @@ body {
 .updates-page{position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--bg-primary);z-index:2600;overflow-y:auto;padding:40px 20px;display:flex;flex-direction:column;align-items:center;}
 .updates-back-btn{position:absolute;top:30px;left:30px;background:var(--bg-secondary);border:2px solid var(--glass-border);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--text-primary);cursor:pointer;}
 .updates-content{max-width:800px;width:100%;color:var(--text-primary);}
+
+.updates-btn{background:var(--accent);color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:600;cursor:pointer;transition:var(--transition);} .updates-btn:hover{background:#0ea66d;}
