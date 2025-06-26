@@ -1129,7 +1129,7 @@ document.getElementById('playlist-back-btn').addEventListener('click',()=>{docum
 
 // Updates page functions
 function openUpdatesPage(){
-  fetch('updates.md')
+  fetch('/updates.md?'+Date.now())
     .then(r=>r.text())
     .then(md=>{
       elements.updatesContent.innerHTML=marked.parse(md);
